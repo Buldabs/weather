@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Сайт-погоды" id="weather-diagram">
+    <mxGraphModel dx="1178" dy="660" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="900" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor-user" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Пользователь" vertex="1">
+          <mxGeometry height="60" width="30" x="500" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-find-weather" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Найти погоду по городу" vertex="1">
+          <mxGeometry height="60" width="160" x="120" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-add-favorite" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Добавить город в избранное" vertex="1">
+          <mxGeometry height="60" width="180" x="340" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-view-favorites" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Просмотреть избранные города" vertex="1">
+          <mxGeometry height="60" width="190" x="700" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-remove-favorite" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Удалить город из избранного" vertex="1">
+          <mxGeometry height="60" width="190" x="480" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-go-to-weather" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Перейти к погоде из избранного" vertex="1">
+          <mxGeometry height="60" width="200" x="760" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-show-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Показать карточку погоды" vertex="1">
+          <mxGeometry height="50" width="160" x="20" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-save-to-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Сохранить в базу данных" vertex="1">
+          <mxGeometry height="50" width="160" x="300" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-load-from-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Загрузить список из БД" vertex="1">
+          <mxGeometry height="50" width="160" x="820" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-delete-from-db" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Удалить из базы данных" vertex="1">
+          <mxGeometry height="50" width="160" x="420" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-show-error" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Показать ошибку" vertex="1">
+          <mxGeometry height="50" width="140" x="130" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-find" edge="1" parent="1" source="actor-user" target="uc-find-weather">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-add" edge="1" parent="1" source="actor-user" target="uc-add-favorite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-view" edge="1" parent="1" source="actor-user" target="uc-view-favorites">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-remove" edge="1" parent="1" source="actor-user" target="uc-remove-favorite">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-user-goto" edge="1" parent="1" source="actor-user" target="uc-go-to-weather">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-include-show" edge="1" parent="1" source="uc-find-weather" style="dashed=1;dashPattern=8 8;" target="uc-show-card">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-include-show" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&amp;lt;extend&amp;gt;" vertex="1">
+          <mxGeometry height="20" width="80" x="230" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-include-save" edge="1" parent="1" source="uc-add-favorite" style="dashed=1;dashPattern=8 8;" target="uc-save-to-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-include-save" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&amp;lt;include&amp;gt;" vertex="1">
+          <mxGeometry height="20" width="80" x="330" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-include-load" edge="1" parent="1" source="uc-view-favorites" style="dashed=1;dashPattern=8 8;" target="uc-load-from-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-include-load" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&amp;lt;include&amp;gt;" vertex="1">
+          <mxGeometry height="20" width="80" x="870" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-include-delete" edge="1" parent="1" source="uc-remove-favorite" style="dashed=1;dashPattern=8 8;" target="uc-delete-from-db">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-include-delete" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" value="&amp;lt;include&amp;gt;" vertex="1">
+          <mxGeometry height="20" width="80" x="440" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-extend-error" edge="1" parent="1" source="uc-find-weather" style="dashed=1;dashPattern=8 8;" target="uc-show-error">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="yG0AT-9AKzmDOeDdttiQ-2" parent="1" style="text;whiteSpace=wrap;" value="&lt;include&gt;" vertex="1">
+          <mxGeometry height="40" width="80" x="80" y="270" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
