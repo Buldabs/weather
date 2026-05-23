@@ -1,0 +1,210 @@
+/* Комментарий: стили для страницы погоды */
+
+/* Комментарий: фон всей страницы (переливающийся градиент) */
+.weatherPage {
+ min-height: 100vh;
+  /* Комментарий: новый градиент - больше голубого, меньше белого */
+  background: linear-gradient(135deg, #1EC1FD, #90D5E8, #6BB5D9);
+  /* Комментарий: было: #90D5E8, #FFFFFF, #90D5E8 */
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Комментарий: анимация переливания фона */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Комментарий: карточка погоды */
+.weatherCard {
+  width: 586px;
+  /* Комментарий: ширина 586 пикселей */
+  height: 812px;
+  /* Комментарий: высота 812 пикселей */
+  border-radius: 20px;
+  /* Комментарий: скругление углов */
+  
+  display: flex;
+  flex-direction: column;
+  /* Комментарий: элементы в столбик */
+  
+  padding: 40px 30px;
+  /* Комментарий: отступы внутри */
+  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Комментарий: тень */
+}
+
+/* Комментарий: название города */
+.cityName {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 48px;
+  font-weight: 500;
+  /* Комментарий: чуть жирнее */
+  text-align: center;
+  margin-bottom: 30px;
+  color: #FFFFFF;
+}
+
+/* Комментарий: температура */
+.temperature {
+  font-size: 64px;
+  font-weight: 300;
+  /* Комментарий: тонкое начертание */
+  text-align: center;
+  margin-bottom: 50px;
+  color: #FFFFFF;
+}
+
+/* Комментарий: контейнер для всех деталей погоды */
+.weatherDetails {
+  flex: 1;
+  /* Комментарий: занимает оставшееся место */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* Комментарий: расстояние между строками */
+  margin-left: 66px;
+  /* Комментарий: отступ от левого края */
+  margin-bottom: 60px;
+}
+
+/* Комментарий: строка с деталью (без многоточия) */
+.detailRow {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+/* Комментарий: строка с деталью (с многоточием) */
+.detailRowWithDots {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 300;
+  color: #FFFFFF;
+}
+
+/* Комментарий: текст детали (слева) */
+.detailLabel {
+  white-space: nowrap;
+}
+
+/* Комментарий: многоточие (растягивается) */
+.dots {
+  flex: 1;
+  border-bottom: 2px dotted #FFFFFF;
+  /* Комментарий: белые точки */
+  margin: 0 10px;
+  height: 1px;
+}
+
+/* Комментарий: значение детали (справа) */
+.detailValue {
+  white-space: nowrap;
+}
+
+/* Комментарий: кнопка возврата */
+.backButton {
+  width: 286px;
+  height: 59px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Комментарий: полупрозрачный белый */
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  /* Комментарий: прижимаем к левому краю */
+  backdrop-filter: blur(10px);
+  /* Комментарий: размытие для стеклянного эффекта */
+}
+
+/* Комментарий: эффект при наведении на кнопку */
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Комментарий: текст загрузки */
+.loading {
+  font-size: 24px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+/* Комментарий: текст ошибки */
+.error {
+  font-size: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
+/* Комментарий: для телефонов */
+@media (max-width: 650px) {
+  .weatherCard {
+    width: 95%;
+    height: auto;
+    min-height: 600px;
+    padding: 30px 20px;
+  }
+  
+  .cityName {
+    font-size: 36px;
+  }
+  
+  .temperature {
+    font-size: 48px;
+  }
+  
+  .weatherDetails {
+    margin-left: 20px;
+    gap: 15px;
+  }
+  
+  .detailRow,
+  .detailRowWithDots {
+    font-size: 20px;
+  }
+  
+  .backButton {
+    width: 100%;
+  }
+}
+.favButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgba(255, 215, 0, 0.8);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.favButton:hover {
+    background-color: rgba(255, 215, 0, 1);
+    transform: scale(1.02);
+}
+.errorText {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}

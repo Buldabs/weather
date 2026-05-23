@@ -1,0 +1,109 @@
+.favoritesPage {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1EC1FD, #90D5E8, #6BB5D9);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 50% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cardButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.viewBtn {
+    background: rgba(30, 193, 253, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+    transition: 0.3s;
+}
+
+.viewBtn:hover {
+    background: rgba(30, 193, 253, 1);
+    transform: scale(1.02);
+}
+
+.removeBtn {
+    background: rgba(255, 80, 80, 0.8);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+    transition: 0.3s;
+}
+
+.removeBtn:hover {
+    background: rgba(255, 0, 0, 0.9);
+    transform: scale(1.02);
+}
+
+.backBtn {
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-family: monospace;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
