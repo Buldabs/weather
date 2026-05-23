@@ -20,4 +20,4 @@ cd frontend
 npm run dev
 ```
 
-
+ссылка на [макет](https://www.figma.com/design/360FRpeQvs4Fxee28WGHuR/Untitled?node-id=0-1&p=f&t=6753GglGnMhI13dB-0)
